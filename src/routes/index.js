@@ -1,4 +1,4 @@
-const quizzes = require("../../data/quizzes.json");
+const quizzes = require('../../data/quizzes.json');
 
 /**
  * Returns a list of quizzes with titles and IDs
@@ -41,10 +41,10 @@ async function postQuiz(req, res, next) {
       const { id, answer } = q;
       if (answers[id] && answers[id] === answer) {
         response.correct++;
-        response.questions[id] = "true";
+        response.questions[id] = 'true';
       } else {
         response.incorrect++;
-        response.questions[id] = "false";
+        response.questions[id] = 'false';
       }
     });
     res.json(response);
